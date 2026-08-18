@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Nova - Signup Flow</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css">
+
+</head>
+
+<body>
+
+
+    <!-- Animated Background -->
+
+    <div class="background">
+
+        <div class="orb orb-1"></div>
+
+        <div class="orb orb-2"></div>
+
+        <div class="orb orb-3"></div>
+
+    </div>
+
+
+
+    <!-- Mobile App -->
+
+    <main class="phone">
+
+
+        <!-- Top Bar -->
+
+        <header class="top-bar">
+
+            <button
+                id="backButton"
+                class="back-button">
+
+                ←
+
+            </button>
+
+
+            <div class="progress-container">
+
+                <div
+                    id="progressBar"
+                    class="progress-bar">
+                </div>
+
+            </div>
+
+
+            <span
+                id="stepNumber"
+                class="step-number">
+
+                1/5
+
+            </span>
+
+        </header>
+
+
+
+        <!-- Screens -->
+
+        <section class="screens">
+
+
+            <!-- =========================
+                 SCREEN 1
+            ========================== -->
+
+            <div
+                class="screen active"
+                id="screen1">
+
+                <div class="illustration">
+
+                    <div class="illustration-circle">
+
+                        ✨
+
+                    </div>
+
+                    <div class="floating-card card-one">
+                        👋
+                    </div>
+
+                    <div class="floating-card card-two">
+                        🚀
+                    </div>
+
+                </div>
+
+
+                <div class="content">
+
+                    <span class="eyebrow">
+                        WELCOME
+                    </span>
+
+                    <h1>
+                        Let's get
+                        <span>started.</span>
+                    </h1>
+
+                    <p>
+                        Create your account and
+                        start your journey with Nova.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="primary-button"
+                    onclick="nextStep()">
+
+                    Get Started
+
+                    <span>→</span>
+
+                </button>
+
+
+                <p class="login-text">
+
+                    Already have an account?
+
+                    <a href="#">
+                        Log in
+                    </a>
+
+                </p>
+
+            </div>
+
+
+
+            <!-- =========================
+                 SCREEN 2
+            ========================== -->
+
+            <div
+                class="screen"
+                id="screen2">
+
+
+                <div class="screen-icon">
+
+                    👋
+
+                </div>
+
+
+                <div class="content">
+
+                    <span class="eyebrow">
+                        STEP 1 OF 4
+                    </span>
+
+                    <h1>
+                        What's your
+                        <span>name?</span>
+                    </h1>
+
+                    <p>
+                        Let us know what we should
+                        call you.
+                    </p>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Full Name
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span>
+                            👤
+                        </span>
+
+                        <input
+                            id="nameInput"
+                            type="text"
+                            placeholder="Enter your name"
+                            autocomplete="name">
+
+                    </div>
+
+                    <small
+                        id="nameError"
+                        class="error">
+                    </small>
+
+                </div>
+
+
+                <button
+                    class="primary-button"
+                    onclick="validateName()">
+
+                    Continue
+
+                    <span>→</span>
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- =========================
+                 SCREEN 3
+            ========================== -->
+
+            <div
+                class="screen"
+                id="screen3">
+
+
+                <div class="screen-icon">
+
+                    📧
+
+                </div>
+
+
+                <div class="content">
+
+                    <span class="eyebrow">
+                        STEP 2 OF 4
+                    </span>
+
+                    <h1>
+                        Your
+                        <span>email.</span>
+                    </h1>
+
+                    <p>
+                        We'll use this to keep your
+                        account secure.
+                    </p>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Email Address
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span>
+                            ✉
+                        </span>
+
+                        <input
+                            id="emailInput"
+                            type="email"
+                            placeholder="you@example.com"
+                            autocomplete="email">
+
+                    </div>
+
+                    <small
+                        id="emailError"
+                        class="error">
+                    </small>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Password
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span>
+                            🔒
+                        </span>
+
+                        <input
+                            id="passwordInput"
+                            type="password"
+                            placeholder="Create a password">
+
+                        <button
+                            type="button"
+                            class="eye-button"
+                            onclick="togglePassword()">
+
+                            👁
+
+                        </button>
+
+                    </div>
+
+                    <div class="password-strength">
+
+                        <div
+                            id="strengthBar">
+                        </div>
+
+                    </div>
+
+                    <small
+                        id="passwordHint">
+
+                        Use at least 8 characters
+
+                    </small>
+
+                </div>
+
+
+                <button
+                    class="primary-button"
+                    onclick="validateAccount()">
+
+                    Continue
+
+                    <span>→</span>
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- =========================
+                 SCREEN 4
+            ========================== -->
+
+            <div
+                class="screen"
+                id="screen4">
+
+
+                <div class="screen-icon">
+
+                    🎯
+
+                </div>
+
+
+                <div class="content">
+
+                    <span class="eyebrow">
+                        STEP 3 OF 4
+                    </span>
+
+                    <h1>
+                        What are you
+                        <span>into?</span>
+                    </h1>
+
+                    <p>
+                        Pick at least one interest
+                        to personalize your experience.
+                    </p>
+
+                </div>
+
+
+                <div
+                    id="interestGrid"
+                    class="interest-grid">
+
+
+                    <button
+                        class="interest"
+                        data-interest="Technology">
+
+                        💻
+
+                        <span>
+                            Technology
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="interest"
+                        data-interest="Design">
+
+                        🎨
+
+                        <span>
+                            Design
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="interest"
+                        data-interest="Music">
+
+                        🎵
+
+                        <span>
+                            Music
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="interest"
+                        data-interest="Travel">
+
+                        ✈️
+
+                        <span>
+                            Travel
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="interest"
+                        data-interest="Fitness">
+
+                        🏋️
+
+                        <span>
+                            Fitness
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="interest"
+                        data-interest="Photography">
+
+                        📸
+
+                        <span>
+                            Photography
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="interest"
+                        data-interest="Gaming">
+
+                        🎮
+
+                        <span>
+                            Gaming
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="interest"
+                        data-interest="Reading">
+
+                        📚
+
+                        <span>
+                            Reading
+                        </span>
+
+                    </button>
+
+
+                </div>
+
+
+                <small
+                    id="interestError"
+                    class="error">
+                </small>
+
+
+                <button
+                    class="primary-button"
+                    onclick="validateInterests()">
+
+                    Continue
+
+                    <span>→</span>
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- =========================
+                 SCREEN 5
+            ========================== -->
+
+            <div
+                class="screen"
+                id="screen5">
+
+
+                <div class="screen-icon">
+
+                    📍
+
+                </div>
+
+
+                <div class="content">
+
+                    <span class="eyebrow">
+                        STEP 4 OF 4
+                    </span>
+
+                    <h1>
+                        Where are you
+                        <span>based?</span>
+                    </h1>
+
+                    <p>
+                        This helps us show you
+                        relevant content.
+                    </p>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Country
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span>
+                            🌎
+                        </span>
+
+                        <select id="countryInput">
+
+                            <option value="">
+                                Select country
+                            </option>
+
+                            <option value="India">
+                                🇮🇳 India
+                            </option>
+
+                            <option value="United States">
+                                🇺🇸 United States
+                            </option>
+
+                            <option value="United Kingdom">
+                                🇬🇧 United Kingdom
+                            </option>
+
+                            <option value="Canada">
+                                🇨🇦 Canada
+                            </option>
+
+                            <option value="Australia">
+                                🇦🇺 Australia
+                            </option>
+
+                            <option value="Other">
+                                🌎 Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        City
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span>
+                            📍
+                        </span>
+
+                        <input
+                            id="cityInput"
+                            type="text"
+                            placeholder="Enter your city">
+
+                    </div>
+
+                </div>
+
+
+                <label class="checkbox-container">
+
+                    <input
+                        id="termsInput"
+                        type="checkbox">
+
+                    <span class="checkmark">
+                    </span>
+
+                    <span class="terms">
+
+                        I agree to the
+                        <a href="#">
+                            Terms
+                        </a>
+                        and
+                        <a href="#">
+                            Privacy Policy
+                        </a>
+
+                    </span>
+
+                </label>
+
+
+                <small
+                    id="locationError"
+                    class="error">
+                </small>
+
+
+                <button
+                    class="primary-button"
+                    onclick="completeSignup()">
+
+                    Create Account
+
+                    <span>✓</span>
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- =========================
+                 SUCCESS
+            ========================== -->
+
+            <div
+                class="screen success-screen"
+                id="successScreen">
+
+
+                <div class="success-animation">
+
+                    <div class="success-circle">
+
+                        ✓
+
+                    </div>
+
+                </div>
+
+
+                <span class="eyebrow">
+                    ALL DONE
+                </span>
+
+
+                <h1>
+                    Welcome,
+                    <span id="userName">
+                        Friend
+                    </span>!
+                </h1>
+
+
+                <p>
+                    Your Nova account is ready.
+                    Let's make something amazing.
+                </p>
+
+
+                <div
+                    id="summary"
+                    class="summary">
+                </div>
+
+
+                <button
+                    class="primary-button"
+                    onclick="restartSignup()">
+
+                    Explore Nova
+
+                    <span>→</span>
+
+                </button>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- Bottom Dots -->
+
+        <div class="dots">
+
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+
+        </div>
+
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
